@@ -226,7 +226,7 @@ RCT_REMAP_METHOD(getInfo,
     [self.player setNumberOfLoops:self.loopCount];
     [self.player prepareToPlay];
     // [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:&error]];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:&error];
     if (error) {
         [self sendErrorEvent:error];
         return;
