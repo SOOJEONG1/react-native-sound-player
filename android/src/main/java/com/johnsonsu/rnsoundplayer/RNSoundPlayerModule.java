@@ -183,6 +183,10 @@ public class RNSoundPlayerModule extends ReactContextBaseJavaModule implements L
   private void mountSoundFile(String name, String type) throws IOException {
     try {
       Uri uri;
+      if (getReactApplicationContext() == null) {
+          Log.e("SoundPlayer", "Context is null. Service cannot start.");
+          return;
+      }
       int soundResID = getReactApplicationContext().getResources().getIdentifier(name, "raw", getReactApplicationContext().getPackageName());
 
       if (soundResID > 0) {
